@@ -1,0 +1,22 @@
+<%- include('includes/head') %>
+<%- include('includes/navigation') %>
+
+<body>
+    <h1>Welcome to Indiana Ham Radio </h1>
+    <p>Welcome to Indiana Ham Radio, your hub for all things amateur radio in the Hoosier State! Whether you're a seasoned operator or new to the world of ham radio, our site is here to connect you with the vibrant amateur radio community across Indiana. Discover resources for licensing, find local clubs and events, and stay up-to-date on public service opportunities and emergency communications initiatives. From the rolling hills of Southern Indiana to the bustling repeater networks in Central and Northern Indiana, we celebrate the passion and innovation that make ham radio a vital and rewarding hobby. Join us in exploring the airwaves and building connections that span neighborhoods, counties, and even continents!</p>
+
+    <form class="name-form" action="/" method="post"> 
+        <div class="name-control">
+            <label for="name">Enter your name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <button class="btn" type="submit">Submit name</button>
+    </form> 
+
+    <% if (names && names.length > 0) { %>
+        <h2>name</h2>
+        <p><%= names[names.length - 1].name %></p>
+    <% } %>
+
+</body>
+</html>
