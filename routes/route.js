@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const input =require(`/Users/admin/Documents/CS 312/feb6/controllers/input.js`);
+const input =require(`../controllers/input.js`);
 router.get('/',input.getaddinput);
 router.post('',input.postaddinput);
 router.get('/extra',input.getadd);

@@ -7,16 +7,13 @@
 
     <form class="name-form" action="/" method="post"> 
         <div class="name-control">
-            <label for="name">Enter your name</label>
+            <label for="name">Enter your Email Address to be put on a mailing list for future ham radio events in Indiana</label>
             <input type="text" name="name" id="name">
         </div>
         <button class="btn" type="submit">Submit name</button>
     </form> 
 
-    <% if (names && names.length > 0) { %>
-        <h2>name</h2>
-        <p><%= names[names.length - 1].name %></p>
-    <% } %>
+ 
 
 </body>
 </html>

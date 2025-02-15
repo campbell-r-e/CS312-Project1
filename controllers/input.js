@@ -1,18 +1,24 @@
-const data = []; 
+const databasemodel =require('../models/name.js');
 exports.getaddinput=(req,res,next) =>{
     res.render('index', { 
         title: 'Home',
-        names: data 
+        //names: data.fetchall()
     });
 
 }
 
-exports.postaddinput=(req,res,next) =>{
+exports.postaddinput= async(req,res,next) =>{
     if (!req.body.name) {
         return res.redirect('/'); 
     }
-    
-    data.push({ name: req.body.name }); 
+    try{
+        const data= new databasemodel({name:req.body.name}); 
+
+      await data.save();
+    }catch(err){
+        console.error('Data was not entered properly:', err);
+    }
+
     res.redirect('/'); 
 
 }
