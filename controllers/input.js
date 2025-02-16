@@ -22,9 +22,4 @@ exports.postaddinput= async(req,res,next) =>{
     res.redirect('/'); 
 
 }
-exports.getadd=(req,res,next) =>{
-    res.render('extra', { 
-        title: 'Home'
-    });
 
-}
